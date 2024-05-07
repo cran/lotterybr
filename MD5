@@ -1,0 +1,15 @@
+73f3f8d3b8a5775ef3179d104cf673e7 *DESCRIPTION
+5929433a716daf9730d8456f2033c08f *LICENSE
+7e5660f961aefa5b20aec97ba4db42a4 *NAMESPACE
+eea482c460a60e72e471b264065c3163 *NEWS.md
+15aac016a91c6318c0a8de5c77c74061 *R/get_data.R
+97b1d689e955d8799116c0023069d75e *README.md
+8eb535c3b5987fe81dd914ff7383a11f *build/vignette.rds
+5b2271bf4b92680d65d7cf128de5b00c *inst/doc/lotterybr.R
+b9f52d2e8741ff1778921c60f4d2840d *inst/doc/lotterybr.Rmd
+638c07e099ddd4149d68a00d514e5c56 *inst/doc/lotterybr.html
+4763aebe0164a8015ef0f18ae79febc5 *man/figures/logo.png
+d52af3b8be100a97cbe8ba29b2811282 *man/get_data.Rd
+ace5ae76b8a0f02b4582d4dc9b9f2998 *tests/testthat.R
+0bc690a067b5ac06aa6ba1c951f9c667 *tests/testthat/tests.R
+b9f52d2e8741ff1778921c60f4d2840d *vignettes/lotterybr.Rmd
