@@ -340,12 +340,127 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(lotterybr)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(lotterybr)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co">#&gt; Loading required package: dplyr</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;dplyr&#39;</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:stats&#39;:</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co">#&gt;     filter, lag</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co">#&gt; Loading required package: ggplot2</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co">#&gt; Loading required package: shiny</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#&gt; Loading required package: plotly</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;plotly&#39;</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:ggplot2&#39;:</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="co">#&gt;     last_plot</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:stats&#39;:</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="co">#&gt;     filter</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:graphics&#39;:</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="co">#&gt;     layout</span></span></code></pre></div>
+<p>This will open the shiny app for better visualisation of the
+datasets</p>
 <div id="get_data" class="section level2">
 <h2>get_data</h2>
 <p>The function can be use in the following way</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>quina_ganhadores <span class="ot">=</span> <span class="fu">get_data</span>(<span class="st">&quot;quina&quot;</span>,<span class="st">&quot;winners&quot;</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>lotofacil_dezenas <span class="ot">=</span> <span class="fu">get_data</span>(<span class="st">&quot;lotofacil&quot;</span>,<span class="st">&quot;numbers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>quina_ganhadores <span class="ot">=</span> <span class="fu">get_data</span>(<span class="st">&quot;quina&quot;</span>,<span class="st">&quot;winners&quot;</span>,<span class="st">&quot;ptbr&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>lotofacil_numbers <span class="ot">=</span> <span class="fu">get_data</span>(<span class="st">&quot;lotofacil&quot;</span>,<span class="st">&quot;numbers&quot;</span>,<span class="st">&quot;eng&quot;</span>)</span></code></pre></div>
+</div>
+<div id="format" class="section level2">
+<h2>Format</h2>
+<p>Each game has two datasets, numbers and winners, with the following
+columns:</p>
+<div id="numbers" class="section level3">
+<h3>numbers</h3>
+<div id="date" class="section level4">
+<h4>date</h4>
+<p>Date type, the date that the game occurred in.</p>
+</div>
+<div id="course" class="section level4">
+<h4>course</h4>
+<p>Integer type, which course the game took place</p>
+</div>
+<div id="accumulated" class="section level4">
+<h4>accumulated</h4>
+<p>Char type, if the game prize is accumulated “yes” or not “no”</p>
+</div>
+<div id="numbers-1" class="section level4">
+<h4>numbers</h4>
+<p>Factor type with 60 levels, the drawn numbers.</p>
+</div>
+</div>
+<div id="winners" class="section level3">
+<h3>winners</h3>
+<div id="date-1" class="section level4">
+<h4>date</h4>
+<p>Date type, the date that the game occurred in.</p>
+</div>
+<div id="course-1" class="section level4">
+<h4>course</h4>
+<p>Integer type, which course the game took place .</p>
+</div>
+<div id="accumulated-1" class="section level4">
+<h4>accumulated</h4>
+<p>Char type, if the game prize is accumulated “yes” or not “no”</p>
+</div>
+<div id="match" class="section level4">
+<h4>match</h4>
+<p>Char type, the possible match.</p>
+</div>
+<div id="winners-1" class="section level4">
+<h4>winners</h4>
+<p>Integer type, the number of winners of each possible match.</p>
+</div>
+<div id="prize" class="section level4">
+<h4>prize</h4>
+<p>Integer type, the prize for each type.</p>
+<p>Some games, like “duplasena” or “diadesorte”, may contain additional
+columns since each game has a different way of drawing numbers.
+Therefore, a brief explanation of each game is as follows.</p>
+</div>
+</div>
+<div id="maismilionaria" class="section level3">
+<h3>maismilionaria</h3>
+<p>Maismilionaria involves selecting five numbers from one pool and one
+additional number from another pool, with the potential to win
+multimillion-dollar jackpots.</p>
+</div>
+<div id="megasena" class="section level3">
+<h3>megasena</h3>
+<p>Six numbers are drawn from a pool of 60, with players aiming to match
+as many as possible for substantial prizes.</p>
+</div>
+<div id="lotofacil" class="section level3">
+<h3>lotofacil</h3>
+<p>Lotofacil involves picking 15 numbers from a pool of 25, with prizes
+awarded for varying levels of matches.</p>
+</div>
+<div id="quina" class="section level3">
+<h3>quina</h3>
+<p>Players select five numbers from a pool of 80, aiming to match as
+many as possible for prizes.</p>
+</div>
+<div id="lotomania" class="section level3">
+<h3>lotomania</h3>
+<p>Lotomania involves selecting 50 numbers from a pool of 100, with
+prizes awarded for matching a certain number of drawn numbers.</p>
+</div>
+<div id="duplasena" class="section level3">
+<h3>duplasena</h3>
+<p>Dupla-Sena involves two separate draws, each with six numbers drawn
+from a pool of 50, offering double the chances to win.</p>
+</div>
+<div id="diadesorte" class="section level3">
+<h3>diadesorte</h3>
+<p>In Dia de Sorte, players choose seven numbers and a month, with
+prizes awarded for matching numbers and/or the month drawn.</p>
+</div>
 </div>
 
 

@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/tomasbp2/lotterybr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tomasbp2/lotterybr/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The goal of the package is to provide a function to automatically import
@@ -34,3 +35,13 @@ library(lotterybr)
 
 lotofacil <- get_data(game= "lotofacil", type= "winners")
 ```
+
+Opening the shiny app
+
+``` r
+
+library(lotterybr)
+open_app()
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
